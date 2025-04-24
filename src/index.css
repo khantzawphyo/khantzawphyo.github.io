@@ -1,7 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap');
-@import "tailwindcss";
-
-@theme {
-    --font-sans: "Archivo";
-    --font-serif: "Instrument Serif";
-}
