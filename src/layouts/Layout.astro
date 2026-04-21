@@ -1,23 +1,43 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
+import { Font } from 'astro:assets';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title = '' } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <Font cssVariable='--font-inter' preload />
+    <Font cssVariable='--font-jetbrains-mono' preload />
+    <Font cssVariable='--font-tiempos' preload />
+    <Font cssVariable='--font-ppmondwest' preload />
+    <Font cssVariable='--font-myanmar' preload />
+    <Font cssVariable='--font-handwriting' preload />
+    <link rel='icon' type='image/png' href='/kzp_avatar.png' />
+    <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+
+    <title>
+      {title ? `Khant Zaw Phyo — ${title}` : 'Khant Zaw Phyo — Portfolio'}
+    </title>
+  </head>
+
+  <body
+    class='bg-lead-800 text-lead-100 font-sans antialiased transition-colors duration-300'
+  >
+    <div class='grain-overlay pointer-events-none' aria-hidden='true'></div>
+
+    <main class='mx-auto max-w-xl px-6 pt-16'>
+      <Navbar />
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>

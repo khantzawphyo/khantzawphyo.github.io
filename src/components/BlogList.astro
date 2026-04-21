@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const posts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+};
+---
+
+<div class='flex flex-col gap-6'>
+  {
+    posts.map((post) => (
+      <a
+        href={`/blog/${post.id}`}
+        class='group flex items-start justify-between py-2 transition-all'
+      >
+        <div class='flex grow flex-col gap-1'>
+          <div class='flex items-center gap-3'>
+            <span class='text-lead-300 group-hover:text-accent font-serif font-medium transition-colors'>
+              {post.data.title}
+            </span>
+            <span
+              class='text-lead-500 group-hover:text-lead-100 hidden h-4 grow transition-colors sm:block'
+              style='background-image: radial-gradient(circle, currentColor 1px, transparent 1px); background-size: 8px 100%; background-repeat: repeat-x; background-position: center;'
+            />
+          </div>
+
+          {post.data.description && (
+            <p class='text-lead-500 group-hover:text-lead-400 line-clamp-2 max-w-md text-sm leading-relaxed transition-colors'>
+              {post.data.description}
+            </p>
+          )}
+        </div>
+
+        <span class='text-lead-500 group-hover:text-lead-200 ml-4 shrink-0 pt-1 text-xs tracking-widest uppercase tabular-nums transition-colors'>
+          {formatDate(post.data.date)}
+        </span>
+      </a>
+    ))
+  }
+</div>

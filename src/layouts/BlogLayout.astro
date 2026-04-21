@@ -1,0 +1,147 @@
+---
+import Layout from './Layout.astro';
+import { Icon } from 'astro-icon/components';
+import GoTop from '../components/GoTop.astro';
+
+const { post, prev, next } = Astro.props;
+
+const formattedDate = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<Layout title={post.data.title}>
+  <article class='mt-12 mb-24'>
+    <nav class='mb-12 flex items-center justify-between'>
+      <a
+        href='/blog'
+        class='group border-lead-800 bg-lead-900/20 hover:border-accent flex size-10 items-center justify-center rounded-full border transition-all duration-300'
+        aria-label='Back to blog'
+      >
+        <div class='relative h-5 w-5 overflow-hidden'>
+          <div
+            class='flex w-10 flex-row transition-transform duration-300 ease-in-out group-hover:-translate-x-5'
+          >
+            <Icon
+              name='f7:arrow-uturn-left'
+              class='text-lead-100 group-hover:text-accent size-5 transition-colors'
+            />
+            <Icon name='f7:arrow-uturn-left' class='text-accent size-5' />
+          </div>
+        </div>
+      </a>
+
+      <button
+        id='copy-link'
+        class='text-lead-500 hover:text-accent border-lead-800 bg-lead-900/20 hover:border-accent rounded-full border px-4 py-1.5 transition-all duration-300'
+      >
+        <span
+          class='font-sans text-xs font-medium transition-colors'
+          id='copy-text'
+        >
+          Copy link
+        </span>
+      </button>
+    </nav>
+
+    <header class='border-lead-600/30 mb-12 border-b pb-4'>
+      <h1
+        class='font-display text-lead-100 text-4xl leading-tight font-medium tracking-tight sm:text-5xl'
+      >
+        {post.data.title}
+      </h1>
+
+      <div class='mt-4 flex items-center gap-2.5'>
+        <time
+          class='text-lead-500 text-sm tracking-widest uppercase tabular-nums'
+        >
+          {formattedDate}
+        </time>
+        {
+          post.data.category && (
+            <>
+              <span
+                class='text-lead-500 size-1 rounded-full bg-current'
+                aria-hidden='true'
+              />
+              <span class='text-accent text-sm tracking-[0.15em] capitalize'>
+                {post.data.category}
+              </span>
+            </>
+          )
+        }
+      </div>
+    </header>
+
+    <div
+      class='prose prose-invert prose-p:text-lead-300 prose-p:leading-[1.8] prose-p:text-[17px] prose-hr:border-lead-600/30 prose-headings:font-display prose-headings:font-medium prose-headings:text-lead-100 prose-strong:text-lead-100 prose-strong:font-bold prose-blockquote:border-accent prose-blockquote:italic prose-blockquote:text-lead-400 max-w-none font-serif'
+    >
+      <slot />
+    </div>
+
+    <div class='mt-20 text-center'>
+      <span class='text-lead-600 font-serif text-lg tracking-[0.5em]'>***</span>
+    </div>
+  </article>
+
+  <footer class='border-lead-600/30 mt-24 mb-20 border-t pt-6'>
+    <div class='grid grid-cols-1 gap-8 sm:grid-cols-2'>
+      {
+        prev ? (
+          <a href={`/blog/${prev.id}`} class='group flex flex-col gap-1'>
+            <span class='text-lead-600 group-hover:text-accent text-sm tracking-widest transition-colors'>
+              Prev
+            </span>
+            <span class='text-lead-200 group-hover:text-lead-100 font-serif text-lg transition-colors'>
+              {prev.data.title}
+            </span>
+          </a>
+        ) : (
+          <div />
+        )
+      }
+
+      {
+        next ? (
+          <a
+            href={`/blog/${next.id}`}
+            class='group flex flex-col gap-2 text-right'
+          >
+            <span class='text-lead-600 group-hover:text-accent text-sm tracking-widest transition-colors'>
+              Next
+            </span>
+            <span class='text-lead-200 group-hover:text-lead-100 font-serif text-lg transition-colors'>
+              {next.data.title}
+            </span>
+          </a>
+        ) : (
+          <div />
+        )
+      }
+    </div>
+  </footer>
+  <GoTop />
+</Layout>
+
+<script>
+  const copyBtn = document.getElementById('copy-link');
+  const copyText = document.getElementById('copy-text');
+
+  copyBtn?.addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href);
+    if (copyText) {
+      const originalText = copyText.textContent;
+      copyText.textContent = 'Copied';
+      copyBtn.classList.add('border-accent');
+      copyText.classList.add('text-accent');
+
+      setTimeout(() => {
+        copyText.textContent = originalText;
+        copyBtn.classList.remove('border-accent');
+        copyText.classList.remove('text-accent');
+      }, 2000);
+    }
+  });
+</script>

@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), var(--font-myanmar), ui-sans-serif, system-ui;
+  --font-serif: var(--font-tiempos), var(--font-myanmar), ui-serif, Georgia, serif;
+  --font-handwriting: var(--font-handwriting), var(--font-myanmar), ui-serif, Georgia, serif;
+  --font-display: var(--font-ppmondwest), var(--font-myanmar), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), var(--font-myanmar), ui-monospace;
+
+  --color-accent: #ce624c;
+
+  --color-lead-50: #fafafa;
+  --color-lead-100: #f5f5f5;
+  --color-lead-200: #e6e6e6;
+  --color-lead-300: #d6d6d6;
+  --color-lead-400: #a5a5a5;
+  --color-lead-500: #767676;
+  --color-lead-600: #575757;
+  --color-lead-700: #434343;
+  --color-lead-800: #212121;
+  --color-lead-900: #1a1a1a;
+  --color-lead-950: #0a0a0a;
+}
+
+@utility grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url('/grain.gif');
+  filter: brightness(0.5) contrast(1.2);
+  mix-blend-mode: overlay;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@layer base {
+  ::selection {
+    background-color: #03493180;
+    color: #27e9a8;
+  }
+  ::selection {
+    background-color: #9c422180;
+    color: #ffedd5;
+  }
+  /* ::selection {
+    background-color: #27e9a8;
+    color: #0a0a0a;
+  } */
+  /* ::selection {
+    background-color: rgba(206, 98, 76, 0.3);
+    color: #ffe4d5;
+  } */
+  /* ::selection {
+    background-color: rgba(217, 119, 6, 0.3);
+    color: #fbbf24;
+  } */
+  /* ::selection {
+    background-color: rgba(126, 155, 134, 0.4);
+    color: #a7f3d0;
+  } */
+  /* ::selection {
+    background-color: rgba(136, 150, 129, 0.4);
+    color: #d1d9cf;
+  } */
+  ::selection {
+    background-color: rgba(200, 157, 68, 0.3);
+    color: #fde68a;
+  }
+}

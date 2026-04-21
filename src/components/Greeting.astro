@@ -1,0 +1,48 @@
+<div class='greeting-wrapper' id='greeting-root'>
+  <span id='greeting-text'>Hello,</span>
+</div>
+
+<script>
+  const greetings = [
+    'Hello,',
+    'Bonjour,',
+    'Mingalarpar,',
+    'Hola,',
+    'Konnichiwa,',
+    'Ciao,',
+    'Ni hao,',
+    'Xin chào,',
+  ];
+  let index = 0;
+  const textElement = document.getElementById('greeting-text');
+
+  function rotate() {
+    if (!textElement) return;
+
+    textElement.style.opacity = '0';
+    textElement.style.filter = 'blur(4px)';
+    textElement.style.transform = 'translateY(-5px)';
+
+    setTimeout(() => {
+      index = (index + 1) % greetings.length;
+      textElement.textContent = greetings[index];
+
+      textElement.style.opacity = '1';
+      textElement.style.filter = 'blur(0px)';
+      textElement.style.transform = 'translateY(0px)';
+    }, 400);
+  }
+
+  setInterval(rotate, 3500);
+</script>
+
+<style>
+  #greeting-text {
+    display: inline-block;
+    transition:
+      opacity 0.5s ease,
+      filter 0.5s ease,
+      transform 0.5s ease;
+  }
+</style>
+

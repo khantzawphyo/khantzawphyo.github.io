@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  id='scroll-to-top'
+  aria-label='Scroll to top'
+  class='border-lead-800 bg-lead-900/50 text-lead-400 hover:bg-lead-900 hover:border-accent hover:text-accent fixed right-8 bottom-8 z-50 flex size-10 translate-y-4 items-center justify-center rounded-full border opacity-0 blur-sm transition-all duration-300 md:right-12 md:bottom-12'
+>
+  <Icon name='f7:arrow-turn-right-up' class='size-5' />
+</button>
+
+<script>
+  const scrollBtn = document.getElementById('scroll-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn?.classList.remove(
+        'opacity-0',
+        'translate-y-4',
+        'blur-sm',
+        'pointer-events-none',
+      );
+      scrollBtn?.classList.add('opacity-100', 'translate-y-0', 'blur-0');
+    } else {
+      scrollBtn?.classList.add(
+        'opacity-0',
+        'translate-y-4',
+        'blur-sm',
+        'pointer-events-none',
+      );
+      scrollBtn?.classList.remove('opacity-100', 'translate-y-0', 'blur-0');
+    }
+  });
+
+  scrollBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

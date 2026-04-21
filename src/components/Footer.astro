@@ -1,0 +1,59 @@
+---
+import { socials } from '../data/data';
+import { Icon } from 'astro-icon/components';
+---
+
+<footer class='pt-20 pb-10'>
+  <div class='mx-auto max-w-xl space-y-8 text-center'>
+    <div class='flex items-center justify-center gap-4'>
+      <span class='bg-lead-600/30 h-px grow'></span>
+      <img
+        src='/element-finis.svg'
+        alt='Finis'
+        class='w-32 opacity-100'
+        style='filter: brightness(0) saturate(100%) invert(95%);'
+      />
+      <span class='bg-lead-600/30 h-px grow'></span>
+    </div>
+
+    <div class='space-y-4'>
+      <div class='space-y-1'>
+        <p class='text-lead-300 font-serif text-base tracking-tight italic'>
+          "Good design is as little design as possible"
+        </p>
+        <p
+          class='text-lead-500 font-serif text-xs tracking-[0.25em] opacity-70'
+        >
+          — Dieter Rams
+        </p>
+      </div>
+
+      <p class='text-lead-600 font-serif text-xs tracking-wider'>
+        Copyright © {new Date().getFullYear()} Khant Zaw Phyo
+      </p>
+    </div>
+
+    <div class='flex justify-center gap-8'>
+      {
+        socials.map((social) => (
+          <a
+            href={social.url}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='group relative flex items-center justify-center'
+            aria-label={social.name}
+          >
+            <span class='bg-lead-950 border-lead-800 text-lead-100 pointer-events-none absolute -top-8 rounded border px-2 py-1 text-[9px] font-medium tracking-widest uppercase opacity-0 transition-all duration-200 group-hover:-top-10 group-hover:opacity-100'>
+              {social.name}
+            </span>
+
+            <Icon
+              name={social.icon}
+              class='text-lead-600 group-hover:text-accent size-6 transition-all duration-300 group-hover:scale-110'
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</footer>
