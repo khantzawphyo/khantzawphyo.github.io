@@ -7,7 +7,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://khantzawphyo.github.io",
+  site: "https://khantzawphyo.dev",
   redirects: {
     "/resume": "/khantzawphyo_cv.pdf",
   },
