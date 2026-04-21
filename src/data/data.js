@@ -1,11 +1,11 @@
 export const projects = [
   {
-    title: "AI News Summarizer",
+    title: "News Summarizer",
     description:
-      "An NLP-powered web application that delivers automated summaries of daily news articles using FastAPI and Hugging Face.",
+      "A personal weekend project created to explore FastAPI and NLP. It generates brief summaries of news articles and includes a simple text-to-speech feature to read them aloud.",
     github: "https://github.com/khantzawphyo/ai-news-summarizer",
     live: "",
-    tags: ["Python", "React", "NLP"],
+    tags: ["Python", "React", "NLP", "TTS"],
   },
   {
     title: "CV Builder",
@@ -26,26 +26,18 @@ export const projects = [
   {
     title: "MIIT Projects Management System",
     description:
-      "A centralized management system for academic projects at MIIT, featuring an administrative dashboard and AWS S3 integration.",
+      "An academic group project, a system for organizing academic projects at MIIT, handling student submissions and cloud-based file storage.",
     github: "https://github.com/khantzawphyo/special-project-3002",
     live: "",
     tags: ["React", "Laravel", "PostgreSQL"],
   },
   {
-    title: "Generation of Exam Timetables",
+    title: "Generation of Exam Timetables using CSP",
     description:
-      "An exam timetable scheduling system that solves complex academic constraints using Constraint Satisfaction Problem (CSP) algorithms to prevent student and venue conflicts.",
+      "An academic group project exploring how to use Constraint Satisfaction algorithms to help automate the scheduling of exam times and venues to avoid conflicts.",
     github: "https://github.com/khantzawphyo/special-project-3001",
     live: "",
     tags: ["React", "Laravel", "CSP"],
-  },
-  {
-    title: "Daisy Weather",
-    description:
-      "A minimalist weather dashboard built with React and daisyUI, utilizing the OpenWeather API to provide real-time local forecasts.",
-    github: "https://github.com/khantzawphyo/daisy-weather",
-    live: "https://daisy-weather.vercel.app/",
-    tags: ["React", "daisyUI", "API"],
   },
   {
     title: "Foundit! Mobile App",
@@ -56,9 +48,17 @@ export const projects = [
     tags: ["Kotlin", "Firebase", "Android"],
   },
   {
+    title: "Daisy Weather",
+    description:
+      "A minimalist weather dashboard built with React and daisyUI, utilizing the OpenWeather API to provide real-time local forecasts.",
+    github: "https://github.com/khantzawphyo/daisy-weather",
+    live: "https://daisy-weather.vercel.app/",
+    tags: ["React", "daisyUI", "API"],
+  },
+  {
     title: "React Todo",
     description:
-      "A clean, functional task management application focusing on state persistence and efficient CRUD operations.",
+      "A basic task manager focused on the essentials: adding, deleting, and saving tasks to local storage to keep things organized.",
     github: "https://github.com/khantzawphyo/react-todo",
     live: "https://react-todo-khantzawphyo.vercel.app/",
     tags: ["React", "Local Storage", "TailwindCSS"],
@@ -74,7 +74,7 @@ export const projects = [
   {
     title: "Etch-A-Sketch",
     description:
-      "A browser-based version of the classic drawing toy, featuring variable grid sizes and progressive darkening effects.",
+      "A fun introductory exercise in DOM manipulation and CSS Grid, built while exploring how to create interactive elements in the browser.",
     github: "https://github.com/khantzawphyo/etch_a_sketch/",
     live: "https://khantzawphyo.github.io/etch_a_sketch/",
     tags: ["JavaScript", "HTML", "CSS"],
@@ -82,7 +82,7 @@ export const projects = [
   {
     title: "Rock Paper Scissors",
     description:
-      "A classic game implementation against a randomized AI, featuring score tracking and dynamic UI updates.",
+      "One of my very first coding projects, designed to practice basic logic, conditional statements, and dynamic UI updates with vanilla JS.",
     github: "https://github.com/khantzawphyo/odin_rps/",
     live: "https://khantzawphyo.github.io/odin_rps/",
     tags: ["JavaScript", "HTML", "CSS"],
