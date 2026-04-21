@@ -5,6 +5,12 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 const { title = '' } = Astro.props;
+const siteTitle = title
+  ? `Khant Zaw Phyo — ${title}`
+  : 'Khant Zaw Phyo — Portfolio';
+const description =
+  'Portfolio of Khant Zaw Phyo, a Computer Science student and Web Developer specializing in React.';
+const siteUrl = 'https://khantzawphyo.dev';
 ---
 
 <!doctype html>
@@ -13,16 +19,31 @@ const { title = '' } = Astro.props;
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
+    <meta name='description' content={description} />
+    <link rel='canonical' href='https://khantzawphyo.dev' />
+
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={siteUrl} />
+    <meta property='og:title' content={siteTitle} />
+    <meta property='og:description' content={description} />
+
+    <meta property='twitter:card' content='summary_large_image' />
+    <meta property='twitter:url' content={siteUrl} />
+    <meta property='twitter:title' content={siteTitle} />
+    <meta property='twitter:description' content={description} />
+
     <Font cssVariable='--font-inter' preload />
     <Font cssVariable='--font-jetbrains-mono' preload />
     <Font cssVariable='--font-tiempos' preload />
     <Font cssVariable='--font-ppmondwest' preload />
     <Font cssVariable='--font-myanmar' preload />
     <Font cssVariable='--font-handwriting' preload />
+
     <script
       defer
       src='https://cloud.umami.is/script.js'
       data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b'></script>
+
     <link rel='icon' type='image/png' href='/kzp_avatar.png' />
     <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
     <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
