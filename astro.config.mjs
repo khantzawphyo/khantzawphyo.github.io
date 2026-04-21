@@ -5,13 +5,15 @@ import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://khantzawphyo.dev",
   redirects: {
     "/resume": "/khantzawphyo_cv.pdf",
   },
-  integrations: [react(), icon()],
+  integrations: [react(), icon(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
