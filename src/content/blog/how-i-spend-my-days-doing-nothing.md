@@ -6,6 +6,8 @@ category: "Personal"
 draft: false
 ---
 
+![Sitting still](/images/sitting-still.jpg)
+
 I wake up.
 
 Not early. Not late. Just whenever.
@@ -65,6 +67,8 @@ Write one sentence. Fix one typo. Open the code editor for five minutes. Close i
 That's still something.
 
 This post is that something for today.
+
+![Noting going on](/images/nothing-going-on.gif)
 
 ## Maybe tomorrow
 
