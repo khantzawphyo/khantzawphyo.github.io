@@ -40,7 +40,7 @@ const currentPath = pathname === '/' ? pathname : pathname.replace(/\/$/, '');
           <a
             href={navLink.link}
             class:list={[
-              'relative inline-flex items-center text-sm transition-colors duration-200',
+              'group relative inline-flex items-center text-sm transition-colors duration-200',
               isActive ? 'text-lead-100' : 'text-lead-500 hover:text-lead-100',
             ]}
           >
