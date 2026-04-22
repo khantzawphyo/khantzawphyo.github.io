@@ -14,36 +14,30 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
 
 <Layout title={post.data.title}>
   <article class='mt-12 mb-24'>
-    <nav class='mb-12 flex items-center justify-between'>
-      <a
-        href='/blog'
-        class='group border-lead-800 bg-lead-900/20 hover:border-accent flex size-10 items-center justify-center rounded-full border transition-all duration-300'
-        aria-label='Back to blog'
+    <nav class='mb-12'>
+      <div
+        class='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'
       >
-        <div class='relative h-5 w-5 overflow-hidden'>
-          <div
-            class='flex w-10 flex-row transition-transform duration-300 ease-in-out group-hover:-translate-x-5'
-          >
-            <Icon
-              name='f7:arrow-uturn-left'
-              class='text-lead-100 group-hover:text-accent size-5 transition-colors'
-            />
-            <Icon name='f7:arrow-uturn-left' class='text-accent size-5' />
-          </div>
-        </div>
-      </a>
-
-      <button
-        id='copy-link'
-        class='text-lead-500 hover:text-accent border-lead-800 bg-lead-900/20 hover:border-accent rounded-full border px-4 py-1.5 transition-all duration-300'
-      >
-        <span
-          class='font-sans text-xs font-medium transition-colors'
-          id='copy-text'
+        <a
+          href='/blog'
+          class='group border-lead-800 bg-lead-700/20 text-lead-300 hover:border-accent hover:text-accent inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300'
+          aria-label='Back to blog'
         >
-          Copy link
-        </span>
-      </button>
+          <Icon name='f7:arrow-uturn-left' class='size-4' />
+          <span>All posts</span>
+        </a>
+
+        <button
+          id='copy-link'
+          class='group border-lead-800 bg-lead-700/20 text-lead-300 hover:border-accent hover:text-accent inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300'
+        >
+          <span id='copy-text'>Copy link</span>
+          <Icon
+            name='f7:link'
+            class='size-4 transition-all duration-200 group-hover:scale-105'
+          />
+        </button>
+      </div>
     </nav>
 
     <header class='border-lead-600/30 mb-12 border-b pb-4'>
@@ -76,16 +70,15 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     </header>
 
     <div
-      class='prose prose-invert prose-img:rounded-md prose-img:w-full prose-img:mx-auto prose-p:text-lead-300 prose-p:leading-[1.8] prose-p:text-[17px] prose-hr:border-lead-600/30 prose-headings:font-display prose-headings:font-medium prose-headings:text-lead-100 prose-strong:text-lead-100 prose-strong:font-bold prose-blockquote:border-accent prose-blockquote:italic prose-blockquote:text-lead-400 max-w-none font-serif'
+      class='prose prose-invert prose-img:rounded-md prose-img:w-full prose-img:mx-auto prose-p:text-lead-300 prose-p:leading-[1.8] prose-p:text-[17px] prose-hr:border-lead-600/30 prose-headings:font-semibold prose-headings:text-lead-100 prose-strong:text-lead-100 prose-strong:font-bold prose-blockquote:border-accent prose-blockquote:italic prose-blockquote:text-lead-400 prose-a:font-sans prose-a:text-accent prose-a:no-underline prose-a:border-b prose-a:border-accent/30 prose-a:transition-all prose-a:duration-200 hover:prose-a:border-accent hover:prose-a:text-accent/80 prose-table:font-sans prose-table:text-lead-300 prose-table:text-sm prose-th:font-sans prose-th:border-lead-600 prose-th:border-b prose-th:pb-2 prose-th:text-left prose-th:font-medium prose-th:text-accent prose-td:border-lead-600/30 prose-td:border-b prose-td:py-2 max-w-none font-serif'
     >
       <slot />
     </div>
-
-    <div class='mt-20 text-center'>
-      <span class='text-lead-600 font-serif text-lg tracking-[0.5em]'>***</span>
-    </div>
   </article>
 
+  <div class='mt-20 text-center'>
+    <span class='text-lead-600 font-serif text-lg tracking-[0.5em]'>***</span>
+  </div>
   <footer class='border-lead-600/30 mt-24 mb-20 border-t pt-6'>
     <div class='grid grid-cols-1 gap-8 sm:grid-cols-2'>
       {
@@ -133,14 +126,12 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
     navigator.clipboard.writeText(window.location.href);
     if (copyText) {
       const originalText = copyText.textContent;
-      copyText.textContent = 'Copied';
-      copyBtn.classList.add('border-accent');
-      copyText.classList.add('text-accent');
+      copyText.textContent = 'Copied!';
+      copyBtn.classList.add('border-accent', 'text-accent');
 
       setTimeout(() => {
         copyText.textContent = originalText;
-        copyBtn.classList.remove('border-accent');
-        copyText.classList.remove('text-accent');
+        copyBtn.classList.remove('border-accent', 'text-accent');
       }, 2000);
     }
   });

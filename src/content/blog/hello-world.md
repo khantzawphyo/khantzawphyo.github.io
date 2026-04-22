@@ -5,7 +5,7 @@ date: "2026-04-12"
 category: "personal"
 ---
 
-![Hello World](/images/hello.gif)
+![Hello World](/images/blog/posts/hello-world/hello.gif)
 
 My name is **Khant Zaw Phyo (ခန့်ဇော်ဖြိုး)**. But you can call me **Wills**.
 
@@ -21,7 +21,7 @@ I grew up a quiet kid. Still am, mostly. I spend a lot of time by myself. Always
 
 Because when you're quiet for too long, the world starts to feel like a movie you're not quite in. Things happen around you. People move. Time passes. And you're there... well technically, but also somewhere else. Watching from the back of the theater. 
 
-![Sad Sponge Bob](/images/sad-sponge-bob.gif)
+![Sad Sponge Bob](/images/blog/posts/hello-world/sad-sponge-bob.gif)
 
 I don't say that for sympathy. I say it because it's true. And maybe someone else reading this feels the same way.
 
@@ -43,7 +43,7 @@ I don't know how often I'll write. Maybe once a week. Maybe once a month. Maybe 
 
 Just me, typing things out.
 
-![Homer Simpson Backing Up](/images/backing-up-homer.gif)
+![Homer Simpson Backing Up](/images/blog/posts/hello-world/backing-up-homer.gif)
 
 So yeah. Thanks for being here, and let the journey begin!
 

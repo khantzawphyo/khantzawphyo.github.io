@@ -6,7 +6,7 @@ category: "Personal"
 draft: false
 ---
 
-![Sitting still](/images/sitting-still.jpg)
+![Sitting still](/images/blog/posts/doing-nth/sitting-still.jpg)
 
 I wake up.
 
@@ -68,7 +68,7 @@ That's still something.
 
 This post is that something for today.
 
-![Noting going on](/images/nothing-going-on.gif)
+![Noting going on](/images/blog/posts/doing-nth/nothing-going-on.gif)
 
 ## Maybe tomorrow
 
