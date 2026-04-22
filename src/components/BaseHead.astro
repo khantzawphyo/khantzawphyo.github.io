@@ -1,0 +1,56 @@
+---
+import { Font } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  canonicalURL: URL;
+}
+
+const { title, description, url, canonicalURL } = Astro.props;
+const SITE_NAME = 'Khant Zaw Phyo';
+---
+
+<meta charset='UTF-8' />
+<meta name='viewport' content='width=device-width' />
+<meta name='generator' content={Astro.generator} />
+<meta name='author' content={SITE_NAME} />
+<meta name='theme-color' content='#212121' />
+<meta name='description' content={description} />
+<meta name='robots' content='index, follow' />
+<link rel='canonical' href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property='og:type' content='website' />
+<meta property='og:url' content={url} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+
+<!-- Twitter -->
+<meta property='twitter:card' content='summary_large_image' />
+<meta property='twitter:url' content={url} />
+<meta property='twitter:title' content={title} />
+<meta property='twitter:description' content={description} />
+
+<!-- Fonts -->
+<Font cssVariable='--font-inter' preload />
+<Font cssVariable='--font-jetbrains-mono' preload />
+<Font cssVariable='--font-tiempos' preload />
+<Font cssVariable='--font-ppmondwest' preload />
+<Font cssVariable='--font-myanmar' preload />
+<Font cssVariable='--font-handwriting' preload />
+
+<!-- Analytics -->
+<script
+  defer
+  src='https://cloud.umami.is/script.js'
+  data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b'></script>
+
+<!-- Favicons -->
+<link rel='icon' type='image/png' href='/kzp_avatar.png' />
+<link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+<link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+<link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+
+<title>{title}</title>

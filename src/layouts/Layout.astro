@@ -1,66 +1,43 @@
 ---
 import '../styles/global.css';
-import { Font } from 'astro:assets';
-import Navbar from '../components/Navbar.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { title = '' } = Astro.props;
-const siteTitle = title
-  ? `Khant Zaw Phyo — ${title}`
-  : 'Khant Zaw Phyo — Portfolio';
-const description =
-  'Portfolio of Khant Zaw Phyo, a Computer Science student and Web Developer specializing in React.';
-const siteUrl = 'https://khantzawphyo.dev';
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+const SITE_NAME = 'Khant Zaw Phyo';
+const SITE_URL = 'https://khantzawphyo.dev';
+const DESCRIPTION =
+  'Khant Zaw Phyo — Computer Science and Engineering (CSE) undergraduate at MIIT, Mandalay. Aspiring web developer diving deep into the JavaScript ecosystem — React, TypeScript, and beyond.';
+
+const pageTitle = title
+  ? `${SITE_NAME} — ${title}`
+  : `${SITE_NAME} — Portfolio`;
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <meta name='description' content={description} />
-    <link rel='canonical' href='https://khantzawphyo.dev' />
-
-    <meta property='og:type' content='website' />
-    <meta property='og:url' content={siteUrl} />
-    <meta property='og:title' content={siteTitle} />
-    <meta property='og:description' content={description} />
-
-    <meta property='twitter:card' content='summary_large_image' />
-    <meta property='twitter:url' content={siteUrl} />
-    <meta property='twitter:title' content={siteTitle} />
-    <meta property='twitter:description' content={description} />
-
-    <Font cssVariable='--font-inter' preload />
-    <Font cssVariable='--font-jetbrains-mono' preload />
-    <Font cssVariable='--font-tiempos' preload />
-    <Font cssVariable='--font-ppmondwest' preload />
-    <Font cssVariable='--font-myanmar' preload />
-    <Font cssVariable='--font-handwriting' preload />
-
-    <script
-      defer
-      src='https://cloud.umami.is/script.js'
-      data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b'></script>
-
-    <link rel='icon' type='image/png' href='/kzp_avatar.png' />
-    <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
-    <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
-    <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
-
-    <title>
-      {title ? `Khant Zaw Phyo — ${title}` : 'Khant Zaw Phyo — Portfolio'}
-    </title>
+    <BaseHead
+      title={pageTitle}
+      description={DESCRIPTION}
+      url={SITE_URL}
+      canonicalURL={canonicalURL}
+    />
   </head>
-
   <body
     class='bg-lead-800 text-lead-100 font-sans antialiased transition-colors duration-300'
   >
     <div class='grain-overlay pointer-events-none' aria-hidden='true'></div>
 
     <main class='mx-auto max-w-xl px-6 pt-16'>
-      <Navbar />
+      <Header />
       <slot />
       <Footer />
     </main>
