@@ -2,29 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 import BlogList from '../components/BlogList.astro';
 import { Icon } from 'astro-icon/components';
-import { getCollection } from 'astro:content';
-
-const allPosts = await getCollection('blog');
-const categories = [
-  ...new Set(allPosts.map((post) => post.data.category).filter(Boolean)),
-];
 ---
 
 <Layout title='Blog'>
-  <header class='mt-16 mb-12'>
-    <h1 class='font-handwriting text-lead-100 text-4xl font-medium tracking-tight'>
-      <span class='flex items-center gap-3'>
-        <Icon
-          name='streamline-pixel:content-files-typing-machine'
-          class='size-10'
-        />
-        ရောက်တတ်ရာရာ
-      </span>
-    </h1>
-    <p class='text-lead-500 mt-4 max-w-md text-sm leading-relaxed'>
-      A collection of random notes, half-baked thoughts, and personal reflections.
-    </p>
+  <header class='mt-16 mb-8'>
+    <div class='flex items-end justify-between gap-4'>
+      <h1
+        class='font-handwriting text-lead-100 text-4xl font-medium tracking-tight'
+      >
+        <span class='flex items-center gap-3'>
+          <Icon
+            name='streamline-pixel:content-files-typing-machine'
+            class='size-10 shrink-0'
+          />
+          ရောက်တတ်ရာရာ
+        </span>
+      </h1>
 
+      <a
+        href='/rss.xml'
+        target='_blank'
+        class='group border-lead-200 bg-lead-100 text-lead-500 hover:border-accent hover:bg-accent/5 hover:text-accent mb-1.5 flex shrink-0 items-center gap-1.5 rounded-md border px-2 py-1 font-mono text-[10px] tracking-wider uppercase transition-all'
+        aria-label='RSS Feed'
+      >
+        <Icon
+          name='streamline-pixel:interface-essential-wifi-feed'
+          class='size-3 group-hover:animate-pulse'
+        />
+        <span class='hidden sm:inline'>Feed</span>
+      </a>
+    </div>
+
+    <p class='text-lead-500 mt-4 max-w-md text-sm leading-relaxed'>
+      A collection of random notes, half-baked thoughts, and personal
+      reflections.
+    </p>
   </header>
 
   <section>
