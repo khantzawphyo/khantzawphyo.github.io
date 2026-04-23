@@ -15,27 +15,20 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
 <Layout title={post.data.title}>
   <article class='mt-12 mb-24'>
     <nav class='mb-12'>
-      <div
-        class='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'
-      >
+      <div class='flex items-center justify-between'>
         <a
           href='/blog'
-          class='group border-lead-800 bg-lead-700/20 text-lead-300 hover:border-accent hover:text-accent inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300'
+          class='group border-lead-800 bg-lead-700/20 text-lead-300 hover:border-accent hover:text-accent flex size-10 items-center justify-center rounded-full border transition-all duration-300'
           aria-label='Back to blog'
         >
           <Icon name='f7:arrow-uturn-left' class='size-4' />
-          <span>All posts</span>
         </a>
 
         <button
           id='copy-link'
-          class='group border-lead-800 bg-lead-700/20 text-lead-300 hover:border-accent hover:text-accent inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300'
+          class='border-lead-800 bg-lead-700/20 text-lead-300 hover:border-accent hover:text-accent cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300'
         >
           <span id='copy-text'>Copy link</span>
-          <Icon
-            name='f7:link'
-            class='size-4 transition-all duration-200 group-hover:scale-105'
-          />
         </button>
       </div>
     </nav>
