@@ -5,9 +5,12 @@
 
 @theme {
   --font-sans: var(--font-inter), var(--font-myanmar), ui-sans-serif, system-ui;
-  --font-serif: var(--font-tiempos), var(--font-myanmar), ui-serif, Georgia, serif;
-  --font-handwriting: var(--font-handwriting), var(--font-myanmar), ui-serif, Georgia, serif;
-  --font-display: var(--font-ppmondwest), var(--font-myanmar), ui-serif, Georgia, serif;
+  --font-serif:
+    var(--font-tiempos), var(--font-myanmar), ui-serif, Georgia, serif;
+  --font-handwriting:
+    var(--font-handwriting), var(--font-myanmar), ui-serif, Georgia, serif;
+  --font-display:
+    var(--font-ppmondwest), var(--font-myanmar), ui-serif, Georgia, serif;
   --font-mono: var(--font-jetbrains-mono), var(--font-myanmar), ui-monospace;
 
   --color-accent: #ce624c;
@@ -31,7 +34,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: url('/grain.gif');
+  background: url("/grain.gif");
   filter: brightness(0.5) contrast(1.2);
   mix-blend-mode: overlay;
   opacity: 0.03;
@@ -40,36 +43,16 @@
 }
 
 @layer base {
+  /* ::selection {
+    background-color: rgba(200, 157, 68, 0.3);
+    color: #fde68a;
+  } */
+  /* ::selection {
+    background-color: #9c422180;
+    color: #ffedd5;
+  } */
   ::selection {
     background-color: #03493180;
     color: #27e9a8;
-  }
-  ::selection {
-    background-color: #9c422180;
-    color: #ffedd5;
-  }
-  /* ::selection {
-    background-color: #27e9a8;
-    color: #0a0a0a;
-  } */
-  /* ::selection {
-    background-color: rgba(206, 98, 76, 0.3);
-    color: #ffe4d5;
-  } */
-  /* ::selection {
-    background-color: rgba(217, 119, 6, 0.3);
-    color: #fbbf24;
-  } */
-  /* ::selection {
-    background-color: rgba(126, 155, 134, 0.4);
-    color: #a7f3d0;
-  } */
-  /* ::selection {
-    background-color: rgba(136, 150, 129, 0.4);
-    color: #d1d9cf;
-  } */
-  ::selection {
-    background-color: rgba(200, 157, 68, 0.3);
-    color: #fde68a;
   }
 }
