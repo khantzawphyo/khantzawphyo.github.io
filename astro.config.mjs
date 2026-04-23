@@ -119,19 +119,19 @@ export default defineConfig({
     },
     {
       provider: fontProviders.local(),
-      name: "walone",
+      name: "Padauk",
       cssVariable: "--font-myanmar",
       options: {
         variants: [
           {
             weight: "400",
             style: "normal",
-            src: ["./src/assets/fonts/walone-regular.ttf"],
+            src: ["./src/assets/fonts/Padauk-Regular.ttf"],
           },
           {
             weight: "700",
             style: "normal",
-            src: ["./src/assets/fonts/walone-bold.ttf"],
+            src: ["./src/assets/fonts/Padauk-Bold.ttf"],
           },
         ],
       },
