@@ -48,10 +48,14 @@ const SITE_NAME = 'Khant Zaw Phyo';
 <Font cssVariable='--font-handwriting' preload />
 
 <!-- Analytics -->
-<script
-  defer
-  src='https://cloud.umami.is/script.js'
-  data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b'></script>
+{import.meta.env.PROD && (
+  <script 
+    defer 
+    src='https://cloud.umami.is/script.js' 
+    data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b' 
+    data-domains="khantzawphyo.dev"
+  ></script>
+)}
 
 <!-- Favicons -->
 <link rel='icon' type='image/png' href='/kzp_avatar.png' />
