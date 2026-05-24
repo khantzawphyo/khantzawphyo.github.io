@@ -6,7 +6,7 @@
 @theme {
   --font-sans: var(--font-inter), var(--font-myanmar), ui-sans-serif, system-ui;
   --font-serif:
-    var(--font-source-serif-4), var(--font-myanmar), ui-serif, Georgia, serif;
+    var(--font-merriweather), var(--font-myanmar), ui-serif, Georgia, serif;
   --font-handwriting:
     var(--font-handwriting), var(--font-myanmar), ui-serif, Georgia, serif;
   --font-display:
@@ -45,7 +45,7 @@
 @utility prose-custom {
   @apply prose prose-invert max-w-none font-serif;
   @apply prose-img:rounded-md prose-img:w-full prose-img:mx-auto;
-  @apply prose-p:text-lead-300 prose-p:leading-[1.8] prose-p:text-[18px];
+  @apply prose-p:text-lead-300 prose-p:text-[16px];
   @apply prose-code:font-medium prose-code:before:content-none prose-code:after:content-none;
   @apply prose-hr:border-lead-600/30;
   @apply prose-headings:font-semibold prose-headings:text-lead-100;

@@ -65,19 +65,19 @@ export default defineConfig({
     },
     {
       provider: fontProviders.local(),
-      name: "Source Serif 4",
-      cssVariable: "--font-source-serif-4",
+      name: "Merriweather",
+      cssVariable: "--font-merriweather",
       options: {
         variants: [
           {
-            weight: "200 900",
+            weight: "300 900",
             style: "normal",
-            src: ["./src/assets/fonts/SourceSerif4Variable.woff2"],
+            src: ["./src/assets/fonts/MerriweatherVariable.woff2"],
           },
           {
-            weight: "200 900",
+            weight: "300 900",
             style: "italic",
-            src: ["./src/assets/fonts/SourceSerif4Variable-Italic.woff2"],
+            src: ["./src/assets/fonts/MerriweatherVariable-Italic.woff2"],
           },
         ],
       },
