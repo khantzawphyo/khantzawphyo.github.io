@@ -41,21 +41,23 @@ const SITE_NAME = 'Khant Zaw Phyo';
 
 <!-- Fonts -->
 <Font cssVariable='--font-inter' preload />
-<Font cssVariable='--font-jetbrains-mono' preload />
-<Font cssVariable='--font-tiempos' preload />
+<Font cssVariable='--font-google-sans-code' preload />
+<Font cssVariable='--font-source-serif-4' preload />
 <Font cssVariable='--font-ppmondwest' preload />
 <Font cssVariable='--font-myanmar' preload />
 <Font cssVariable='--font-handwriting' preload />
 
 <!-- Analytics -->
-{import.meta.env.PROD && (
-  <script 
-    defer 
-    src='https://cloud.umami.is/script.js' 
-    data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b' 
-    data-domains="khantzawphyo.dev"
-  ></script>
-)}
+{
+  import.meta.env.PROD && (
+    <script
+      defer
+      src='https://cloud.umami.is/script.js'
+      data-website-id='6947db08-2c35-447d-aae5-d3b515843d2b'
+      data-domains='khantzawphyo.dev'
+    />
+  )
+}
 
 <!-- Favicons -->
 <link rel='icon' type='image/png' href='/kzp_avatar.png' />

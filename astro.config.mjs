@@ -17,6 +17,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  markdown: {
+    shikiConfig: {
+      theme: "dark-plus",
+    },
+  },
   fonts: [
     {
       provider: fontProviders.local(),
@@ -41,50 +46,38 @@ export default defineConfig({
     },
     {
       provider: fontProviders.local(),
-      name: "JetBrains Mono",
-      cssVariable: "--font-jetbrains-mono",
+      name: "Google Sans Code",
+      cssVariable: "--font-google-sans-code",
       options: {
         variants: [
           {
-            weight: "100 900",
+            weight: "300 800",
             style: "normal",
-            src: ["./src/assets/fonts/JetBrainsMonoVariable.woff2"],
-            featureSettings: '"ss01", "cv02", "cv03", "zero"',
+            src: ["./src/assets/fonts/GoogleSansCodeVariable.woff2"],
           },
           {
-            weight: "100 900",
+            weight: "300 800",
             style: "italic",
-            src: ["./src/assets/fonts/JetBrainsMonoVariable-Italic.woff2"],
-            featureSettings: '"ss01", "cv02", "cv03", "zero"',
+            src: ["./src/assets/fonts/GoogleSansCodeVariable-Italic.woff2"],
           },
         ],
       },
     },
     {
       provider: fontProviders.local(),
-      name: "Tiempos Text",
-      cssVariable: "--font-tiempos",
+      name: "Source Serif 4",
+      cssVariable: "--font-source-serif-4",
       options: {
         variants: [
           {
-            weight: "400",
+            weight: "200 900",
             style: "normal",
-            src: ["./src/assets/fonts/tiempos-text-web-regular.woff2"],
+            src: ["./src/assets/fonts/SourceSerif4Variable.woff2"],
           },
           {
-            weight: "400",
+            weight: "200 900",
             style: "italic",
-            src: ["./src/assets/fonts/tiempos-text-web-regular-italic.woff2"],
-          },
-          {
-            weight: "600",
-            style: "normal",
-            src: ["./src/assets/fonts/tiempos-text-web-semibold.woff2"],
-          },
-          {
-            weight: "600",
-            style: "italic",
-            src: ["./src/assets/fonts/tiempos-text-web-semibold-italic.woff2"],
+            src: ["./src/assets/fonts/SourceSerif4Variable-Italic.woff2"],
           },
         ],
       },

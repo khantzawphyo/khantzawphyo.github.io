@@ -6,12 +6,12 @@
 @theme {
   --font-sans: var(--font-inter), var(--font-myanmar), ui-sans-serif, system-ui;
   --font-serif:
-    var(--font-tiempos), var(--font-myanmar), ui-serif, Georgia, serif;
+    var(--font-source-serif-4), var(--font-myanmar), ui-serif, Georgia, serif;
   --font-handwriting:
     var(--font-handwriting), var(--font-myanmar), ui-serif, Georgia, serif;
   --font-display:
     var(--font-ppmondwest), var(--font-myanmar), ui-serif, Georgia, serif;
-  --font-mono: var(--font-jetbrains-mono), var(--font-myanmar), ui-monospace;
+  --font-mono: var(--font-google-sans-code), var(--font-myanmar), ui-monospace;
 
   --color-accent: #ce624c;
 
@@ -37,20 +37,68 @@
   background: url("/grain.gif");
   filter: brightness(0.5) contrast(1.2);
   mix-blend-mode: overlay;
-  opacity: 0.03;
+  opacity: 0.01;
   pointer-events: none;
   z-index: 9999;
 }
 
+@utility prose-custom {
+  @apply prose prose-invert max-w-none font-serif;
+  @apply prose-img:rounded-md prose-img:w-full prose-img:mx-auto;
+  @apply prose-p:text-lead-300 prose-p:leading-[1.8] prose-p:text-[18px];
+  @apply prose-code:font-medium prose-code:before:content-none prose-code:after:content-none;
+  @apply prose-hr:border-lead-600/30;
+  @apply prose-headings:font-semibold prose-headings:text-lead-100;
+  @apply prose-strong:text-lead-100 prose-strong:font-bold;
+  @apply prose-blockquote:border-accent prose-blockquote:italic prose-blockquote:text-lead-400;
+  @apply prose-a:font-sans prose-a:text-accent prose-a:no-underline prose-a:border-b prose-a:border-accent/30 prose-a:transition-all prose-a:duration-200 hover:prose-a:border-accent hover:prose-a:text-accent/80;
+
+  & table {
+    @apply text-lead-300 my-8 w-full border-separate border-spacing-0 text-left font-sans text-sm;
+    @apply border-lead-600/20 bg-lead-900/10 overflow-hidden rounded-xl border;
+  }
+  & thead {
+    @apply bg-lead-700/10 border-lead-600/30 border-b;
+  }
+  & th {
+    @apply text-accent border-lead-600/30 border-b px-4 py-3 font-medium;
+    @apply font-sans text-[11px] tracking-wider uppercase;
+  }
+  & td {
+    @apply border-lead-600/15 text-lead-300 border-b px-4 py-3 transition-colors duration-150;
+    @apply tabular-nums;
+  }
+  & tr:last-child td {
+    @apply border-b-0;
+  }
+  & tbody tr:hover td {
+    @apply bg-lead-700/10 text-lead-100;
+  }
+
+& pre {
+    @apply border-lead-600/30 my-8 overflow-x-auto rounded-xl border p-5;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-lead-700) transparent;
+  }
+
+  & pre::-webkit-scrollbar {
+    @apply h-1.5;
+  }
+  & pre::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  & pre::-webkit-scrollbar-thumb {
+    @apply bg-lead-700/50 hover:bg-lead-600/50 rounded-full transition-colors;
+  }
+
+  & pre code {
+    @apply font-mono text-[14px] leading-relaxed block rounded-none border-0 p-0;
+    counter-reset: line;
+    background: transparent !important;
+  }
+}
+
 @layer base {
-  /* ::selection {
-    background-color: rgba(200, 157, 68, 0.3);
-    color: #fde68a;
-  } */
-  /* ::selection {
-    background-color: #9c422180;
-    color: #ffedd5;
-  } */
   ::selection {
     background-color: #03493180;
     color: #27e9a8;

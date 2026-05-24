@@ -62,9 +62,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
       </div>
     </header>
 
-    <div
-      class='prose prose-invert prose-img:rounded-md prose-img:w-full prose-img:mx-auto prose-p:text-lead-300 prose-p:leading-[1.8] prose-p:text-[17px] prose-hr:border-lead-600/30 prose-headings:font-semibold prose-headings:text-lead-100 prose-strong:text-lead-100 prose-strong:font-bold prose-blockquote:border-accent prose-blockquote:italic prose-blockquote:text-lead-400 prose-a:font-sans prose-a:text-accent prose-a:no-underline prose-a:border-b prose-a:border-accent/30 prose-a:transition-all prose-a:duration-200 hover:prose-a:border-accent hover:prose-a:text-accent/80 prose-table:font-sans prose-table:text-lead-300 prose-table:text-sm prose-th:font-sans prose-th:border-lead-600 prose-th:border-b prose-th:pb-2 prose-th:text-left prose-th:font-medium prose-th:text-accent prose-td:border-lead-600/30 prose-td:border-b prose-td:py-2 max-w-none font-serif'
-    >
+    <div class='prose-custom'>
       <slot />
     </div>
   </article>
