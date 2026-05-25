@@ -3,6 +3,7 @@ title: "Why I Switched to pnpm"
 description: "After cleaning 20GB of node_modules folders, I finally switched to pnpm."
 date: "2026-05-25"
 category: "Productivity"
+tags: ["pnpm", "node", "package-manager", "productivity"]
 ---
 
 A few days after cleaning over 20GB of old `node_modules` folders with `npkill`, I realized something:

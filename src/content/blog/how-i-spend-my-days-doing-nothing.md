@@ -3,6 +3,7 @@ title: "How I spend most of my days doing nothing"
 date: 2026-04-22
 description: "A post about nothing. Literally."
 category: "Personal"
+tags: ["reflections", "habits", "personal"]
 draft: false
 ---
 
@@ -18,7 +19,7 @@ Then I get up. I eat something (ရှမ်းခေါက်ဆွဲ is my fa
 
 Then I sit.
 
-I open my laptop. I stare at the screen. 
+I open my laptop. I stare at the screen.
 
 And the infinite scrolling, binge watching begin. YouTube. Reddit. Facebook. The same places. The same content. Nothing new.
 

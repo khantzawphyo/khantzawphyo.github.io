@@ -3,6 +3,7 @@ title: "My favorite sans-serifs and where I use them"
 date: 2026-04-23
 description: "Just the fonts I like looking at."
 category: "Design"
+tags: ["typography", "design", "fonts", "ui"]
 draft: false
 ---
 

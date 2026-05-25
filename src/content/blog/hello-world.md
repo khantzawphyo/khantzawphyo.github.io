@@ -3,6 +3,7 @@ title: "Hello, World!"
 description: "Allow me to introduce myself."
 date: "2026-04-12"
 category: "personal"
+tags: ["meta", "introduction", "personal"]
 ---
 
 ![Hello World](/images/blog/posts/hello-world/hello.gif)

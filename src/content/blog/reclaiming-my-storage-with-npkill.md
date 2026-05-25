@@ -3,6 +3,7 @@ title: "How I Cleared 20GB of node_modules with npkill"
 description: "A cleanup tool you didn't know you needed."
 date: "2026-05-21"
 category: "Productivity"
+tags: ["npkill", "node", "cli", "productivity"]
 ---
 
 There’s an old running joke in the web dev community that the heaviest object in the universe isn't a black hole, it’s a local `node_modules` folder. I used to laugh at those memes, until my own laptop decided to take them literally.
