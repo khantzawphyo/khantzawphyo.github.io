@@ -53,6 +53,24 @@
   @apply prose-blockquote:border-accent prose-blockquote:italic prose-blockquote:text-lead-400;
   @apply prose-a:font-sans prose-a:text-accent prose-a:no-underline prose-a:border-b prose-a:border-accent/30 prose-a:transition-all prose-a:duration-200 hover:prose-a:border-accent hover:prose-a:text-accent/80;
 
+  /* --- Heading Anchors --- */
+  & :is(h1, h2, h3, h4, h5, h6) {
+    @apply relative;
+
+    & .heading-anchor {
+      @apply absolute top-1/2 right-full -translate-y-1/2 pr-1.5;
+      @apply text-lead-500 border-b-0 no-underline opacity-0 transition-all duration-200 select-none;
+    }
+
+    &:hover .heading-anchor {
+      @apply opacity-100;
+    }
+
+    & .heading-anchor:hover {
+      @apply text-accent;
+    }
+  }
+
   & table {
     @apply text-lead-300 my-8 w-full border-separate border-spacing-0 text-left font-sans text-sm;
     @apply border-lead-600/20 bg-lead-900/10 overflow-hidden rounded-xl border;
@@ -75,7 +93,7 @@
     @apply bg-lead-700/10 text-lead-100;
   }
 
-& pre {
+  & pre {
     @apply border-lead-600/30 my-8 overflow-x-auto rounded-xl border p-5;
     scrollbar-width: thin;
     scrollbar-color: var(--color-lead-700) transparent;
@@ -92,7 +110,7 @@
   }
 
   & pre code {
-    @apply font-mono text-[14px] leading-relaxed block rounded-none border-0 p-0;
+    @apply block rounded-none border-0 p-0 font-mono text-[14px] leading-relaxed;
     counter-reset: line;
     background: transparent !important;
   }

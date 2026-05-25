@@ -2,6 +2,8 @@
 import { defineConfig, fontProviders } from "astro/config";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import icon from "astro-icon";
 
@@ -21,6 +23,22 @@ export default defineConfig({
     shikiConfig: {
       theme: "dark-plus",
     },
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "prepend",
+          properties: {
+            className: ["heading-anchor"],
+          },
+          content: {
+            type: "text",
+            value: "#",
+          },
+        },
+      ],
+    ],
   },
   fonts: [
     {
