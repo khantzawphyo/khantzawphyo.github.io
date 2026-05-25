@@ -15,14 +15,14 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   <article class='my-6 md:my-12'>
     <header class='border-lead-600/20 relative mb-12'>
       <div
-        class='mb-4 flex items-center gap-3 text-xs tracking-wider uppercase select-none'
+        class='mb-4 flex items-center gap-3 text-sm tracking-wider select-none'
       >
         <a
           href='/blog'
-          class='text-lead-500 hover:text-accent flex items-center gap-1 transition-colors'
+          class='text-lead-500 hover:text-accent flex items-center gap-1 font-medium transition-colors'
           aria-label='Back to blog'
         >
-          <Icon name='f7:arrowshape-turn-up-left' class='size-3' />
+          <Icon name='f7:arrowshape-turn-up-left-fill' class='size-3' />
           <span>Back to blog</span>
         </a>
       </div>
@@ -81,7 +81,8 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
       {
         prev ? (
           <a href={`/blog/${prev.id}`} class='group flex flex-col gap-1'>
-            <span class='text-lead-600 group-hover:text-accent tracking-widest transition-colors'>
+            <span class='text-lead-600 group-hover:text-accent flex items-center gap-1.5 tracking-widest transition-colors'>
+              <Icon name='f7:arrowshape-turn-up-left-fill' class='size-3.5' />
               Prev
             </span>
             <span class='text-lead-200 group-hover:text-lead-100 text-md font-serif transition-colors'>
@@ -96,10 +97,11 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
         next ? (
           <a
             href={`/blog/${next.id}`}
-            class='group flex flex-col gap-2 text-right'
+            class='group flex flex-col gap-1 text-right'
           >
-            <span class='text-lead-600 group-hover:text-accent tracking-widest transition-colors'>
+            <span class='text-lead-600 group-hover:text-accent flex items-center justify-end gap-1.5 tracking-widest transition-colors'>
               Next
+              <Icon name='f7:arrowshape-turn-up-right-fill' class='size-3.5' />
             </span>
             <span class='text-lead-200 group-hover:text-lead-100 text-md font-serif transition-colors'>
               {next.data.title}
@@ -111,6 +113,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
       }
     </div>
   </footer>
+
   <GoTop />
 </Layout>
 

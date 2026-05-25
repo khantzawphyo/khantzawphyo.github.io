@@ -46,7 +46,7 @@
   @apply prose prose-invert max-w-none font-serif;
   @apply prose-img:rounded-md prose-img:w-full prose-img:mx-auto;
   @apply prose-p:text-lead-300 prose-p:text-[16px];
-  @apply prose-code:font-medium prose-code:before:content-none prose-code:after:content-none;
+  @apply prose-code:before:content-none prose-code:after:content-none;
   @apply prose-hr:border-lead-600/30;
   @apply prose-headings:font-semibold prose-headings:text-lead-100;
   @apply prose-strong:text-lead-100 prose-strong:font-bold;
