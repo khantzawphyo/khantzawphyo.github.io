@@ -16,6 +16,7 @@ function toDataUri(filePath: string): string {
 export default async (post: {
   data: {
     title: string;
+    description: string;
   };
 }) => {
   const merriWeatherExtraBoldPath = path.resolve(
@@ -43,6 +44,7 @@ export default async (post: {
   const memojiDataUri = toDataUri(memojiPath);
 
   const title = safeText(post.data.title);
+  const description = safeText(post.data.description);
   const authorName = "Khant Zaw Phyo";
   const authorEmail = "khantzawphyo02@gmail.com";
 
@@ -84,6 +86,19 @@ export default async (post: {
                     textAlign: "left",
                   },
                   children: title,
+                },
+              },
+              {
+                type: "p",
+                props: {
+                  style: {
+                    margin: 0,
+                    fontSize: "24px",
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    color: "#575757",
+                  },
+                  children: description,
                 },
               },
             ],
