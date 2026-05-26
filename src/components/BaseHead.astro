@@ -6,9 +6,10 @@ interface Props {
   description: string;
   url: string;
   canonicalURL: URL;
+  ogImage?: string;
 }
 
-const { title, description, url, canonicalURL } = Astro.props;
+const { title, description, url, canonicalURL, ogImage } = Astro.props;
 const SITE_NAME = 'Khant Zaw Phyo';
 ---
 
@@ -32,12 +33,14 @@ const SITE_NAME = 'Khant Zaw Phyo';
 <meta property='og:url' content={url} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
+{ogImage && <meta property='og:image' content={ogImage} />}
 
 <!-- Twitter -->
 <meta property='twitter:card' content='summary_large_image' />
 <meta property='twitter:url' content={url} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
+{ogImage && <meta property='twitter:image' content={ogImage} />}
 
 <!-- Fonts -->
 <Font cssVariable='--font-inter' preload />

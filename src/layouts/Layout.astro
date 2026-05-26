@@ -6,18 +6,21 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
+  description?: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 
 const SITE_NAME = 'Khant Zaw Phyo';
 const SITE_URL = 'https://khantzawphyo.dev';
-const DESCRIPTION =
+const DEFAULT_DESCRIPTION =
   'Khant Zaw Phyo — Computer Science and Engineering (CSE) undergraduate at MIIT, Mandalay. Aspiring web developer diving deep into the JavaScript ecosystem — React, TypeScript, and beyond.';
 
 const pageTitle = title
   ? `${SITE_NAME} — ${title}`
   : `${SITE_NAME} — Portfolio`;
+const pageDescription = description || DEFAULT_DESCRIPTION;
 const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
 ---
 
@@ -26,9 +29,10 @@ const canonicalURL = new URL(Astro.url.pathname, SITE_URL);
   <head>
     <BaseHead
       title={pageTitle}
-      description={DESCRIPTION}
-      url={SITE_URL}
+      description={pageDescription}
+      url={canonicalURL.href}
       canonicalURL={canonicalURL}
+      ogImage={ogImage}
     />
   </head>
   <body
