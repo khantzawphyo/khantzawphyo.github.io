@@ -13,10 +13,24 @@ function toDataUri(filePath: string): string {
   return `data:image/png;base64,${fs.readFileSync(filePath).toString("base64")}`;
 }
 
+function formatDate(dateStr: string): string {
+  try {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  } catch {
+    return dateStr;
+  }
+}
+
 export default async (post: {
   data: {
     title: string;
     description: string;
+    date: string;
   };
 }) => {
   const merriWeatherExtraBoldPath = path.resolve(
@@ -32,6 +46,12 @@ export default async (post: {
     "src/assets/fonts/Inter-Regular.ttf",
   );
 
+  // Added Padauk Bold Font Path
+  const padaukBoldPath = path.resolve(
+    process.cwd(),
+    "src/assets/fonts/Padauk-Bold.ttf",
+  );
+
   const merriWeatherExtraBoldFontBuffer = fs.readFileSync(
     merriWeatherExtraBoldPath,
   );
@@ -39,6 +59,7 @@ export default async (post: {
     merriWeatherSemiBoldPath,
   );
   const interRegularFontBuffer = fs.readFileSync(interRegularPath);
+  const padaukBoldFontBuffer = fs.readFileSync(padaukBoldPath);
 
   const memojiPath = path.resolve(process.cwd(), "public/memoji.png");
   const memojiDataUri = toDataUri(memojiPath);
@@ -46,7 +67,7 @@ export default async (post: {
   const title = safeText(post.data.title);
   const description = safeText(post.data.description);
   const authorName = "Khant Zaw Phyo";
-  const authorEmail = "khantzawphyo02@gmail.com";
+  const postedDate = formatDate(post.data.date);
 
   const element = {
     type: "div",
@@ -80,7 +101,7 @@ export default async (post: {
                     margin: 0,
                     fontSize: "72px",
                     lineHeight: 1.1,
-                    fontFamily: "Merriweather",
+                    fontFamily: "Merriweather, Padauk",
                     fontWeight: 800,
                     color: "#f5f5f5",
                     textAlign: "left",
@@ -94,7 +115,7 @@ export default async (post: {
                   style: {
                     margin: 0,
                     fontSize: "24px",
-                    fontFamily: "Inter",
+                    fontFamily: "Inter, Padauk",
                     fontWeight: 400,
                     color: "#575757",
                   },
@@ -110,15 +131,15 @@ export default async (post: {
             style: {
               display: "flex",
               alignItems: "center",
-              gap: 32,
+              gap: 24,
             },
             children: [
               {
                 type: "img",
                 props: {
                   src: memojiDataUri,
-                  width: 120,
-                  height: 120,
+                  width: 80,
+                  height: 80,
                   alt: "Author Memoji",
                   style: {
                     borderRadius: "9999px",
@@ -158,7 +179,7 @@ export default async (post: {
                           fontWeight: 400,
                           color: "#a5a5a5",
                         },
-                        children: authorEmail,
+                        children: postedDate,
                       },
                     },
                   ],
@@ -192,6 +213,12 @@ export default async (post: {
         name: "Inter",
         data: interRegularFontBuffer,
         weight: 400,
+        style: "normal",
+      },
+      {
+        name: "Padauk",
+        data: padaukBoldFontBuffer,
+        weight: 700,
         style: "normal",
       },
     ],
