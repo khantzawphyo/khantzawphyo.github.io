@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "Star Matrix Technology Corporate Website",
+    description:
+      "A public-facing corporate website built for Star Matrix Technology to present its IT infrastructure and ELV engineering services, showcase project case studies, and provide contact channels for client inquiries.",
+    github: "",
+    live: "https://starmatrix.web.app/",
+    tags: ["Next.js", "React", "TypeScript", "TailwindCSS", "Firebase"],
+  },
+  {
     title: "News Summarizer",
     description:
       "A personal weekend project created to explore FastAPI and NLP. It generates brief summaries of news articles and includes a simple text-to-speech feature to read them aloud.",
