@@ -1,99 +1,67 @@
 export const projects = [
   {
+    title: "Service Operations Management System",
+    description:
+      "An internal service management system built to centralize operational workflows, support requests, and maintenance schedules.",
+    github: "",
+    live: "",
+    tags: ["Next.js", "React", "PostgreSQL"],
+  },
+  {
     title: "Star Matrix Technology Corporate Website",
     description:
-      "A public-facing corporate website built for Star Matrix Technology to present its IT infrastructure and ELV engineering services, showcase project case studies, and provide contact channels for client inquiries.",
+      "A responsive corporate website designed and developed for Star Matrix Technology to showcase its technology services, projects, and business offerings.",
     github: "",
     live: "https://starmatrix.web.app/",
-    tags: ["Next.js", "React", "TypeScript", "TailwindCSS", "Firebase"],
-  },
-  {
-    title: "News Summarizer",
-    description:
-      "A personal weekend project created to explore FastAPI and NLP. It generates brief summaries of news articles and includes a simple text-to-speech feature to read them aloud.",
-    github: "https://github.com/khantzawphyo/ai-news-summarizer",
-    live: "",
-    tags: ["Python", "React", "NLP", "TTS"],
-  },
-  {
-    title: "CV Builder",
-    description:
-      "A professional resume generator with real-time live preview and browser-native print-to-PDF functionality.",
-    github: "https://github.com/khantzawphyo/odin-react-cv/",
-    live: "https://cv-builder-khantzawphyo.vercel.app/",
-    tags: ["React", "Zustand", "TailwindCSS"],
-  },
-  {
-    title: "Memory Card Game",
-    description:
-      "A Simpsons-themed memory game designed to test cognitive recall; the goal is to click every card without ever hitting the same one twice.",
-    github: "https://github.com/khantzawphyo/memory-card/",
-    live: "https://khantzawphyo.github.io/memory-card/",
-    tags: ["React", "TailwindCSS"],
+    tags: ["Next.js", "React", "TailwindCSS"],
   },
   {
     title: "MIIT Projects Management System",
     description:
-      "An academic group project, a system for organizing academic projects at MIIT, handling student submissions and cloud-based file storage.",
+      "A web application for organizing and tracking academic projects, teams, and project-related information at MIIT.",
     github: "https://github.com/khantzawphyo/special-project-3002",
     live: "",
     tags: ["React", "Laravel", "PostgreSQL"],
   },
   {
-    title: "Generation of Exam Timetables using CSP",
+    title: "FoundIt! Lost & Found Mobile App",
     description:
-      "An academic group project exploring how to use Constraint Satisfaction algorithms to help automate the scheduling of exam times and venues to avoid conflicts.",
-    github: "https://github.com/khantzawphyo/special-project-3001",
-    live: "",
-    tags: ["React", "Laravel", "CSP"],
-  },
-  {
-    title: "Foundit! Mobile App",
-    description:
-      "A university lost-and-found mobile app built with Kotlin and Firebase for item reporting and recovery.",
+      "A university lost-and-found mobile app built with Kotlin and Firebase for reporting, searching, and recovering lost items.",
     github: "https://github.com/khantzawphyo/lost-and-found-app",
     live: "",
     tags: ["Kotlin", "Firebase", "Android"],
   },
   {
-    title: "Daisy Weather",
+    title: "Generation of Exam Timetables Using CSP",
     description:
-      "A minimalist weather dashboard built with React and daisyUI, utilizing the OpenWeather API to provide real-time local forecasts.",
-    github: "https://github.com/khantzawphyo/daisy-weather",
-    live: "https://daisy-weather.vercel.app/",
-    tags: ["React", "daisyUI", "API"],
+      "An academic scheduling system that uses Constraint Satisfaction techniques to generate conflict-free exam timetables.",
+    github: "https://github.com/khantzawphyo/special-project-3001",
+    live: "",
+    tags: ["React", "Laravel", "CSP"],
   },
   {
-    title: "React Todo",
+    title: "CV Builder",
     description:
-      "A basic task manager focused on the essentials: adding, deleting, and saving tasks to local storage to keep things organized.",
-    github: "https://github.com/khantzawphyo/react-todo",
-    live: "https://react-todo-khantzawphyo.vercel.app/",
-    tags: ["React", "Local Storage", "TailwindCSS"],
+      "A web-based CV builder with real-time editing, live preview, and browser-native PDF export.",
+    github: "https://github.com/khantzawphyo/odin-react-cv/",
+    live: "https://cv-builder-khantzawphyo.vercel.app/",
+    tags: ["React", "Zustand", "TailwindCSS"],
   },
   {
-    title: "Odin Calculator",
+    title: "The Simpsons Memory Card Game",
     description:
-      "A fully functional browser-based calculator with keyboard support, handling complex logic and decimal precision.",
-    github: "https://github.com/khantzawphyo/odin-calculator",
-    live: "https://khantzawphyo.github.io/odin-calculator/",
-    tags: ["JavaScript", "HTML", "CSS"],
+      "An interactive memory card game featuring score tracking, streaks, card matching, and progression logic.",
+    github: "https://github.com/khantzawphyo/memory-card/",
+    live: "https://khantzawphyo.github.io/memory-card/",
+    tags: ["React", "JavaScript", "TailwindCSS"],
   },
   {
-    title: "Etch-A-Sketch",
+    title: "News Summarizer",
     description:
-      "A fun introductory exercise in DOM manipulation and CSS Grid, built while exploring how to create interactive elements in the browser.",
-    github: "https://github.com/khantzawphyo/etch_a_sketch/",
-    live: "https://khantzawphyo.github.io/etch_a_sketch/",
-    tags: ["JavaScript", "HTML", "CSS"],
-  },
-  {
-    title: "Rock Paper Scissors",
-    description:
-      "One of my very first coding projects, designed to practice basic logic, conditional statements, and dynamic UI updates with vanilla JS.",
-    github: "https://github.com/khantzawphyo/odin_rps/",
-    live: "https://khantzawphyo.github.io/odin_rps/",
-    tags: ["JavaScript", "HTML", "CSS"],
+      "A personal project exploring FastAPI and NLP to generate brief summaries of news articles with text-to-speech output.",
+    github: "https://github.com/khantzawphyo/ai-news-summarizer",
+    live: "",
+    tags: ["Python", "React", "NLP"],
   },
 ];
 
@@ -114,29 +82,32 @@ export const education = [
 
 export const toolkit = [
   {
-    category: "Languages",
-    items: [
-      { name: "TypeScript", logo: "/logos/typescript.svg" },
-      { name: "JavaScript", logo: "/logos/javascript.svg" },
-      { name: "Python", logo: "/logos/python.svg" },
-    ],
-  },
-  {
-    category: "Frameworks & Libs",
+    category: "Languages & Frameworks",
     items: [
       { name: "React", logo: "/logos/react.svg" },
       { name: "Next.js", logo: "/logos/nextjs.svg" },
-      { name: "Astro", logo: "/logos/astro.svg" },
-      { name: "Tailwind CSS", logo: "/logos/tailwind.svg" },
+      { name: "React Native", logo: "/logos/react-native.svg" },
+      { name: "Kotlin", logo: "/logos/kotlin.svg" },
+      { name: "TypeScript", logo: "/logos/typescript.svg" },
+      { name: "JavaScript", logo: "/logos/javascript.svg" },
+      { name: "HTML/CSS", logo: "/logos/html.svg" },
     ],
   },
   {
-    category: "Software",
+    category: "Databases & Cloud",
     items: [
-      { name: "Figma", logo: "/logos/figma.svg" },
-      { name: "VS Code", logo: "/logos/vscode.svg" },
+      { name: "PostgreSQL", logo: "/logos/postgresql.svg" },
+      { name: "MySQL", logo: "/logos/mysql.svg" },
+      { name: "Firebase", logo: "/logos/firebase.svg" },
+    ],
+  },
+  {
+    category: "Libraries & Tools",
+    items: [
       { name: "Git", logo: "/logos/git.svg" },
-      { name: "Postman", logo: "/logos/postman.svg" },
+      { name: "Figma", logo: "/logos/figma.svg" },
+      { name: "Zustand", logo: "/logos/zustand.svg" },
+      { name: "Tailwind CSS", logo: "/logos/tailwind.svg" },
     ],
   },
 ];
