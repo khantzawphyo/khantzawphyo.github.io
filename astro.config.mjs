@@ -13,7 +13,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://khantzawphyo.dev",
   redirects: {
-    "/resume": "/khantzawphyo_cv_2026.pdf",
+    "/resume": "/khantzawphyo.pdf",
   },
   integrations: [react(), icon(), sitemap()],
   vite: {
